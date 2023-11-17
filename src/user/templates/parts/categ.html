@@ -1,0 +1,7 @@
+{% load static %}
+<!--box---------------->
+<a class="category-box" href = "{% url categ|slice:':-3' %}">
+<img alt="{{categ|slice:':-3'}}" src="{% static 'images/images/' %}{{categ|slice:':-3'}}.png">
+<span>{{categ|slice:':-3'}}</span>
+
+    

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--==Title==================================-->
+    <title>
+
+        Chitkara Grocery Store
+
+    </title>
+    
+    <!--==Stylesheet=============================-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/Home Page CSS.css' %}">
+
+    <!--==Fav-icon===============================-->
+    <link rel="shortcut icon" href="{% static '/images/fav-icon.png' %}"/>
+
+    <!--==Using-Font-Awesome=====================-->
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+
+    <script src = "{% static '/js/Home Page JS.js' %}" defer></script>
+	    
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+
+    </head>
+
+    <body>
+
+        <!--==Navigation================================-->
+       {% include 'parts/nav.html' %}
+        
+        <!--==Search-banner=======================================-->
+        <section id="search-banner">
+
+            <!--bg--------->
+            <img alt="bg" class="bg-1" src="{% static 'images\images\bg-1.png' %}">
+
+            <img alt="bg" class="bg-1_rev" src="{% static 'images\images\bg-1.png' %}">
+
+            <img alt="bg-2" class="bg-2" src="{% static 'images\images\bg-2.png' %}">
+
+            <!--text------->
+            <div class="search-banner-text">
+
+                <h1>
+                    
+                    Order Your daily Groceries
+                
+                </h1>
+
+                <strong>
+                    
+                    #Free Delivery
+                
+                </strong>
+
+                <!--search-box------>
+                <form action="" class="search-box">
+
+                    <!--icon------>
+                    <i class="fas fa-search"></i>
+
+                    <!--input----->
+                    <input type="text" class="search-input" placeholder="Search" name="search" size = "80px" required>
+
+                    <!--btn------->
+                    <input type="submit" class="search-btn" value="Search">
+
+                </form>
+
+                <br>
+
+                <h3>
+
+                    <a href = "" style = 'color: #40aa54'>
+
+                        Click here to learn about today's best deals
+
+                    </a>
+
+                </h3>
+
+            </div>
+
+        </section>
+
+        <!--search-banner-end--------------->
+
+        <h2 class = 'sale-heading'>
+
+            Republic Day Sale is Live For
+
+        </h2>
+
+        <div class="countdown-container">
+
+            <div class="countdown-el days-c">
+                <p class="big-text" id="days">0</p>
+                <span>Days</span>
+            </div>
+            <div class="countdown-el hours-c">
+                <p class="big-text" id="hours">0</p>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-el mins-c">
+                <p class="big-text" id="mins">0</p>
+                <span>Min</span>
+            </div>
+            <div class="countdown-el seconds-c">
+                <p class="big-text" id="seconds">0</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+        <!--==category=========================================-->
+        <section id="category">
+            <!--heading---------------->
+            <div class="category-heading">
+                <h2>
+                    Category
+                </h2>
+                <span>
+                    All
+                </span>
+            </div>
+            <!--box-container---------->
+            <div class="category-container">
+            {% for category in categories %}
+                <a class="category-box" href = "{% url 'category-page' category_name=category.CATcat %}">
+                <img alt="{{category.CATcat}}" src="{{ category.CATimage.url }}">
+                <span>{{category.CATcat}}</span>
+            {% endfor %}
+            </div>
+        </section>
+
+        <!--==Products====================================-->
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h3>Popular Product</h3>
+                <span>All</span>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                {% include 'parts/product-box.html' %}
+            </div>
+        </section>
+        <!--popular-product-end--------------------->
+        <!--Popular-bundle-pack===================================-->
+        <section id="popular-bundle-pack">
+            <!--heading-------------->
+            <div class="product-heading">
+                <h3>Popular Bundle Pack</h3>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                {% include 'parts/product-box.html' %}
+            </div>
+        </section>
+        <!--popular-bundle-pack-end-------------------------------->
+        <!--==Clients===============================================-->
+        <section id="clients">
+            <!--heading---------------->
+            <div class="client-heading">
+                <h3>What Our Clients Say</h3>
+            </div>
+            <!--box-container---------->
+            <div class="client-box-container">
+                
+                {% include 'parts/client-box.html' %}
+                
+                
+            </div>
+        </section>
+        <!--client-section-end---------->
+        <!--==Partnre-logo================================-->
+        <section id="partner">
+            <!--heading------------>
+            <div class="partner-heading">
+                <h3>Our Trusted Partner</h3>
+            </div>
+            <!--logo-container----->
+            <div class="logo-container">
+                <img alt="logo" src="{% static 'images\images\logo-1.png' %}">
+                <img alt="logo" src="{% static 'images\images\logo-2.png' %}">
+                <img alt="logo" src="{% static 'images\images\logo-3.png' %}">
+                <img alt="logo" src="{% static 'images\images\logo-4.png' %}">
+            </div>
+        </section>
+        <!--logo-section-end--------------------->
+        <!--==download-app====================================-->
+        <section id="download-app">
+            <!--img----------------------->
+            <div class="app-img">
+                <img alt="app" src="{% static 'images\images\mobile-app.png' %}">
+            </div>
+            <!--text---------------------->
+            <div class="download-app-text">
+                <strong>Download App</strong>
+                <p>Grocery shopping made easier. Now, you don't need to open the website for placing orders. Download the <b>Chitkara Grocery Store</b> app from Play Store and App Store to start shopping easily and faster. <br> HAPPY SHOPPING!</b></p>
+                <!--btns------->
+                <div class="download-btns">
+                    <a href="https://www.apple.com/in/app-store/"><img alt="" src="{% static 'images\images\googleplay-btn.png' %}"></a>
+                    <a href="https://play.google.com/store"><img alt="" src="{% static 'images\images\appstore-btn.png' %}"></a>
+                </div>
+            </div>
+        </section>
+        <!--download-app-section-end------------------------->
+        <!--==Footer=============================================-->
+       {% include 'parts/footer.html' %}
+    </body>
+</html>

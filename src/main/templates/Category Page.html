@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+    <title>
+
+        Baby Care Products
+
+    </title>
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/Baby Care Category Page CSS.css' %}">
+    
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+
+    <body>
+
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h2 class = 'fruits-heading'>{{category_name}}</h2>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                
+                {% for product in products %}
+                    <div class="product-box">
+                        {% if  product.PDCTimage %}
+                            <img alt="{{product.PDCTname}}" src="{{ product.PDCTimage.url }}">
+                        {% endif %}
+                        <strong>{{product.PDCTname}}</strong>
+                        <span class="quantity">{{product.PDCTquant}} {{product.PDCTquant_type}}</span>
+                        <span class="price">Rs. {{product.PDCTprice}}</span>
+                        <!--cart-btn------->
+                        <a href="{% url 'Shopping Cart' %}" class="cart-btn" style = 'text-decoration: none;'>
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn" style = 'text-decoration: none;'>
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                <!-- display other product information as needed -->
+                {% empty %}
+                    <p>No products found.</p>
+                {% endfor %}
+                
+            </div>
+        </section>
+
+    </body>
+
+</html>

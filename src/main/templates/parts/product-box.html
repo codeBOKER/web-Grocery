@@ -1,0 +1,16 @@
+<div class="product-box">
+    <img alt="{{pro.name}}" src="{{ pro.image.url }}">
+    <strong>{{pro.name}}</strong>
+    <span class="quantity">{{pro.quant}} {{pro.quant_type}}</span>
+    <span class="price">Rs. {{pro.price}}</span>
+    <!--cart-btn------->
+    <a href="{% url 'Shopping Cart' %}" class="cart-btn" style = 'text-decoration: none;'>
+        <i class="fas fa-shopping-bag"></i> Add to Cart
+    </a>
+    <!--like-btn------->
+    <a class="like-btn" style = 'text-decoration: none;'>
+        <i class="far fa-heart"></i>
+    </a>
+</div>
+
+
