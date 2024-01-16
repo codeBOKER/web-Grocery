@@ -20,7 +20,7 @@
     <ul class="menu">
 
         <li>
-            <a href="{% url 'Home' %}" class="active">
+            <a href="{% url 'home' %}" class="active">
                 
                 Home
 
@@ -50,7 +50,7 @@
 
         <li>
             
-            <a href="{% url 'Contact Form Confirm' %}">
+            <a href="#">
                 
                 Contact&nbsp;Us
             
@@ -60,7 +60,7 @@
         
         <li>
             
-            <a href="{% url 'Feedback Form' %}">
+            <a href="#">
                 
                 Feedback
             
@@ -70,7 +70,7 @@
         
         <li>
 
-            <a href="{% url 'About Us' %}">
+            <a href="{% url 'about_us' %}">
 
                 About&nbsp;us
 
@@ -87,27 +87,26 @@
             </a>
         
         </li>
-
-        <li>
-            
-            <a href="{% url 'Login And Registr' %}">
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'logout' %}?next={% url 'home' %}">logout</a>
+            </li>
+            <li>
+                <p>{{ request.user.username }}</p>
+            </li>
+        {% else %}
                     
-                Sign&nbsp;up
+            <li>
+            
+                <a href="{% url 'login_registr' %}">
                 
-            </a>
-            
-        </li>
-
+                    Login&nbsp;or&nbsp;Sign&nbsp;up
+                    
+                </a>
         
-        <li>
+            </li>
+        {% endif %}
             
-            <a href="{% url 'Login And Registr' %}">
-                
-                Login
-            
-            </a>
-        
-        </li>
 
         </ul>
 
@@ -115,7 +114,7 @@
     <div class="right-nav">
 
         <!--like----->
-        <a href="{% url 'Wishlist' %}" class="like">
+        <a href="#" class="like">
 
             <i class="fas fa-heart"></i>
 
@@ -128,7 +127,7 @@
         </a>
 
         <!--cart----->
-        <a href="{% url 'Shopping Cart' %}" class="cart">
+        <a href="#" class="cart">
 
             <i class="fas fa-shopping-cart"></i>
 
@@ -141,7 +140,7 @@
         </a>
 
         <!--cart----->
-        <a href="{% url 'Profile' %}" class="user-profile">
+        <a href="#" class="user-profile">
 
             <i class="fas fa-user"></i>
 

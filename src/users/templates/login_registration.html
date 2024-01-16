@@ -68,33 +68,22 @@
 
                 </div>
 
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        <input type="text" placeholder="EMAIL" name="email" required>
-
-                        <input type="password" placeholder="PASSWORD" name="password" required>
-
-                        <button id="b">
-                            
-                            <a href="#" style = "cursor: pointer;">
-                                
-                                Forgot password?
-                            
-                            </a>
-                        
-                        </button>
-
-                        <button type="submit" class = 'sign_in_btn'>
-
-                            <a href = "{% url 'Home' %}" style = 'color: white;'>
-                            
-                                SIGN IN
-
-                            </a>
-                        
-                        </button>
-
-                    </form>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{login_form}}
+                    
+                    <button id="b">
+                        <a href="#" style="cursor: pointer;">
+                            Forgot password?
+                        </a>
+                    </button>
+                    
+                    <button type="submit" name='signin' class='sign_in_btn'>
+                        <a href="" style='color: white;'>
+                            SIGN&nbsp;IN
+                        </a>
+                    </button>
+                </form>
 
                 </div>
 
@@ -198,30 +187,16 @@
 
                     </div>
 
-                    <form action="">
-
-                        <input type="text" placeholder="NAME" required>
+                    <form action="" method="POST">
+                        
+                        {% csrf_token %}
+                        
+                        {{register_form}}
                         
                         <br>
-
-                        <input type="text" placeholder="EMAIL" required>
-                        
-                        <br>
-
-                        <input type="password" placeholder="PASSWORD" required>
-
-                        <br>
-
-                        <input type="text" placeholder="PHONE NO. (optional)">
-
-                        <br>
-
-                        <button type="submit" style = "cursor: pointer;" class = 'sign_up_btn'>
-                            
-                            <a href = "{% url 'Home' %}" style = "color: white; text-decoration: none;">
-                            
-                            SIGN UP
-
+                        <button type="submit"  name="signup" style = "cursor: pointer;" class = 'sign_up_btn'>
+                            <a  style = "color: white; text-decoration: none;">
+                            SIGN&nbsp;UP
                             </a>
                         
                         </button>

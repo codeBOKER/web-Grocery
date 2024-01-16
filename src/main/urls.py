@@ -3,16 +3,13 @@ from . import views
 
 urlpatterns = [
     path('', views.home),    
-    path('Home/', views.home,
-          name='Home'),
-    path("About/", views.about,
-         name='About Us'),
+    path('home/', views.home,
+          name='home'),
+    path("about/", views.about,
+         name='about_us'),
     
     path("category/<str:category_name>/", views.func_category,
          name='category-page'),
-
-    path("BestDeals/", views.best_deals,
-         name='Best Deals'),
  
 ]
 
