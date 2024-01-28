@@ -1,11 +1,11 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+
 
 
 class Brand(models.Model):
-    BNDname = models.CharField(max_length=50 , verbose_name=_('Name'),
+    BNDname = models.CharField(max_length=50 , verbose_name=('Name'),
                                blank=True, null=True)
-    BNDdesc = models.TextField(max_length=500, verbose_name=_('Description'),
+    BNDdesc = models.TextField(max_length=500, verbose_name=('Description'),
                                blank=True, null=True)
     
     def __str__(self) -> str:
@@ -13,9 +13,9 @@ class Brand(models.Model):
     
 
 class Variant(models.Model):
-    VRTname = models.CharField(max_length=50 , verbose_name=_('Name'),
+    VRTname = models.CharField(max_length=50 , verbose_name=('Name'),
                                blank=True, null=True)
-    VRTdesc = models.TextField(max_length=500, verbose_name=_('Description'),
+    VRTdesc = models.TextField(max_length=500, verbose_name=('Description'),
                                blank=True, null=True)
     
     def __str__(self) -> str:

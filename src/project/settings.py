@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'users',
     'settings',
+    'ratings',
 ]
 
 MIDDLEWARE = [
