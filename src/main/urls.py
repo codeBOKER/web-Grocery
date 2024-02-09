@@ -18,8 +18,6 @@ urlpatterns = [
     # path("DetailsForCheckout/", views.DetailsForCheckout,
     #      name='Details For Checkout'),
     
-    # path("LoginRegistr/", views.LoginRegistr,
-    #      name='Login And Registr'),
     # path("Payment/", views.Payment,
     #      name='Payment'),
     # path("Profile/", views.Profile,
@@ -30,9 +28,5 @@ urlpatterns = [
     #      name='Wishlist'),
     # path("ContactFormConfirm/", views.ContactFormConfirm,
     #      name='ContactFormConfirm'),
-    # path("FeedbackFormConfirm/", views.FeedbackFormConfirm,
-    #      name='FeedbackFormConfirm'),
-    # path("FeedbackForm/", views.FeedbackForm,
-    #      name='FeedbackForm'),
     # path("PaymentConfirmation/", views.PaymentConfirmation,
     #      name='PaymentConfirmation'),
